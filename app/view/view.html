@@ -1,14 +1,32 @@
-<div>
-    <p>
-        Please enter the number of primes:
-        <input type="number" name="numberOfPrimes" ng-model="model.n" min="1"/>
-        <button type="button" name="primeButton" ng-click="getPrimes(model.n)">
-            Show prime table
-        </button>
-    </p>
-</div>
-<div>
-    <p ng-repeat="prime in model.firstNPrimes">
-        {{ prime }}
-    </p>
+<div ng-form="primesForm">
+    <div class="row">
+        <p>
+            Please enter the number of primes:
+            <input type="number" name="numberOfPrimes" ng-model="model.n" min="1"
+                   ng-class="{'has-error': primesForm.numberOfPrimes.$invalid}" required/>
+            <button type="button" name="primeButton" ng-disabled="primesForm.$invalid"
+                    ng-click="getPrimes(model.n)" ng-class="{'button-disable': primesForm.$invalid}">
+                Show prime table
+            </button>
+        </p>
+    </div>
+
+    <div class="row" ng-if="model.firstNPrimes.length">
+        <div class="section"></div>
+        <p>Prime multiplication table for the first {{model.firstNPrimes.length}} primes</p>
+        <table>
+            <tr>
+                <th></th>
+                <th ng-repeat="prime in model.firstNPrimes">
+                    {{ prime }}
+                </th>
+            </tr>
+            <tr ng-repeat="prime in model.firstNPrimes">
+                <th> {{ prime }}</th>
+                <td ng-repeat="prime2 in model.firstNPrimes">
+                    {{prime * prime2}}
+                </td>
+            </tr>
+        </table>
+    </div>
 </div>

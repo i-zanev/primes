@@ -25,3 +25,14 @@ Primes multiplication table
     ```
     npm test
     ```
+
+## Improvements
+
+###There may be a better/faster prime algorithm
+###A bit more tests - may be an end to end test
+###Add some color to the output and may be make the table striped
+
+## Happy with
+
+###Expected a slower prime number calculation for large number of primes - quite decent in the end
+###Managed to get some validation in and conditional classes showing incorrect input
