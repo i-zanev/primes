@@ -11,4 +11,11 @@ angular.module('primesApp.view', ['ngRoute'])
 
     .controller('ViewCtrl', ['$scope', function($scope) {
       $scope.n = 0;
+      $scope.model = {
+          firstNPrimes: []
+          };
+
+      $scope.getPrimes = function(n) {
+        $scope.model.firstNPrimes = n;
+      };
     }]);

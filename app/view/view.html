@@ -1,5 +1,14 @@
-<div class="row">
+<div>
     <p>
-        Its alive {{n}}
+        Please enter the number of primes:
+        <input type="number" name="numberOfPrimes" ng-model="model.n" min="1"/>
+        <button type="button" name="primeButton" ng-click="getPrimes(n)">
+            Show prime table
+        </button>
+    </p>
+</div>
+<div>
+    <p>
+        The number of primes is {{ model.n }}
     </p>
 </div>
